@@ -14,6 +14,7 @@
 		5D5585402196126200F70838 /* tinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D55853F2196126200F70838 /* tinderTests.swift */; };
 		5D55854B2196126200F70838 /* tinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D55854A2196126200F70838 /* tinderUITests.swift */; };
 		5D55855921961A2400F70838 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D55855821961A2400F70838 /* CardsViewController.swift */; };
+		5D8FB4B621963A6400557F39 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8FB4B521963A6400557F39 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		5D55854A2196126200F70838 /* tinderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tinderUITests.swift; sourceTree = "<group>"; };
 		5D55854C2196126200F70838 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D55855821961A2400F70838 /* CardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
+		5D8FB4B521963A6400557F39 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				5D5585312196126200F70838 /* Assets.xcassets */,
 				5D5585332196126200F70838 /* LaunchScreen.storyboard */,
 				5D5585362196126200F70838 /* Info.plist */,
+				5D8FB4B521963A6400557F39 /* ProfileViewController.swift */,
 			);
 			path = tinder;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D8FB4B621963A6400557F39 /* ProfileViewController.swift in Sources */,
 				5D55855921961A2400F70838 /* CardsViewController.swift in Sources */,
 				5D55852B2196126100F70838 /* AppDelegate.swift in Sources */,
 			);

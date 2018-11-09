@@ -113,4 +113,15 @@ class CardsViewController: UIViewController {
             }
         }
     }
+    
+    
+    @IBAction func onDidTapInfo(_ sender: Any) {
+        self.performSegue(withIdentifier: "profileSegue", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let profileViewController = segue.destination as! ProfileViewController
+        //print(profileViewController.profileImageView)
+        profileViewController.passedImage = cardImage.image
+    }
 }
