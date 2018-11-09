@@ -9,13 +9,54 @@
 import UIKit
 
 class CardsViewController: UIViewController {
-
+    var whereStarted: CGFloat!
     var cardInitialCenter: CGPoint!
     @IBOutlet weak var cardImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        cardImage.layer.cornerRadius = 50
+        cardImage.clipsToBounds = true
+        cardImage.isUserInteractionEnabled = true
+        
     }
+    
+    @IBAction func onDidPan(_ sender: UIPanGestureRecognizer) {
+        let translation = sender.translation(in: view)
+        if sender.state == .began {
+            whereStarted = sender.location(in: cardImage).y
+        } else if sender.state == .changed {
+            if whereStarted > 200 {
+                if translation.x < 0 {
+                    let translationAmount = max(-180, translation.x)
+                    let rotationAmount = min(45, -Double(translation.x)/4) * Double.pi / 180
+                    cardImage.transform = CGAffineTransform(translationX: translationAmount, y: 0)
+                    cardImage.transform = cardImage.transform.rotated(by: CGFloat(rotationAmount))
+                } else {
+                    let translationAmount = min(180, translation.x)
+                    let rotationAmount = max(-45, -Double(translation.x)/4) * Double.pi / 180
+                    cardImage.transform = CGAffineTransform(translationX: translationAmount, y: 0)
+                    cardImage.transform = cardImage.transform.rotated(by: CGFloat(rotationAmount))
+                }
+            } else {
+                if translation.x < 0 {
+                    let translationAmount = max(-180, translation.x)
+                    let rotationAmount = max(-45, Double(translation.x)/4) * Double.pi / 180
+                    cardImage.transform = CGAffineTransform(translationX: translationAmount, y: 0)
+                    cardImage.transform = cardImage.transform.rotated(by: CGFloat(rotationAmount))
+                } else {
+                    let translationAmount = min(180, translation.x)
+                    let rotationAmount = min(45, Double(translation.x)/4) * Double.pi / 180
+                    cardImage.transform = CGAffineTransform(translationX: translationAmount, y: 0)
+                    cardImage.transform = cardImage.transform.rotated(by: CGFloat(rotationAmount))
+                }
+            }
+        } else if sender.state == .ended {
+            pushOffScreen(translationCurrent: Int(translation.x))
+        }
+    }
+    
     
     func pushOffScreen(translationCurrent: Int!) {
         if translationCurrent > 0 {
@@ -55,6 +96,8 @@ class CardsViewController: UIViewController {
                 }
             }
         }
+        
+        // place ryan's image once again
     }
     
 }
