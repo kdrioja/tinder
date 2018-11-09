@@ -57,47 +57,60 @@ class CardsViewController: UIViewController {
         }
     }
     
-    
     func pushOffScreen(translationCurrent: Int!) {
-        if translationCurrent > 0 {
-            if translationCurrent > 50 {
-                UIView.animate(withDuration: 0.1, animations: {
-                    self.cardImage.center.x += 100
-                }) { (success) in
-                    if success {
-                        self.cardImage.isHidden = true
-                    }
-                }
-            } else {
-                UIView.animate(withDuration: 0.1, animations: {
-                    self.cardImage.transform = CGAffineTransform.identity
-                }) { (success) in
-                    if success {
-                        self.cardImage.isHidden = false
-                    }
+        if translationCurrent > 50 {
+            UIView.animate(withDuration: 0.1, animations: {
+                self.cardImage.center.x += 100
+            }) { (success) in
+                if success {
+                    self.cardImage.isHidden = true
                 }
             }
-        } else {
-            if translationCurrent < -50 {
-                UIView.animate(withDuration: 0.1, animations: {
+            
+            //self.cardImage.transform = CGAffineTransform.identity
+            //self.cardImage.isHidden = false
+            //self.cardImage.center.x -= 100
+            /*
+            UIView.animate(withDuration: 0.1, animations: {
+                self.cardImage.transform = CGAffineTransform.identity
+            }) { (success) in
+                if success {
                     self.cardImage.center.x -= 100
-                }) { (success) in
-                    if success {
-                        self.cardImage.isHidden = true
-                    }
+                    self.cardImage.isHidden = false
                 }
-            } else {
-                UIView.animate(withDuration: 0.1, animations: {
-                    self.cardImage.transform = CGAffineTransform.identity
-                }) { (success) in
-                    if success {
-                        self.cardImage.isHidden = false
-                    }
+            }*/
+        }
+        else if translationCurrent < -50 {
+            UIView.animate(withDuration: 0.1, animations: {
+                self.cardImage.center.x -= 100
+            }) { (success) in
+                if success {
+                    self.cardImage.isHidden = true
+                }
+            }
+            
+            //self.cardImage.transform = CGAffineTransform.identity
+            //self.cardImage.center.x += 100
+            //self.cardImage.isHidden = false
+            /*
+            UIView.animate(withDuration: 0.1, animations: {
+                self.cardImage.transform = CGAffineTransform.identity
+            }) { (success) in
+                if success {
+                    self.cardImage.center.x += 100
+                    self.cardImage.isHidden = false
+                }
+            }*/
+            
+        }
+        else {
+            UIView.animate(withDuration: 0.1, animations: {
+                self.cardImage.transform = CGAffineTransform.identity
+            }) { (success) in
+                if success {
+                    self.cardImage.isHidden = false
                 }
             }
         }
-        
-        // place ryan's image once again
     }
-    
 }
