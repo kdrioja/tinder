@@ -10,7 +10,7 @@ The following **required** user stories are complete:
 
 - [X] User can drag card using a pan gesture (+1pt)
 - [X] Card rotates as user pans (+1pt)
-- [ ] Card animates when user ends panning gesture (+2pt)
+- [X] Card animates when user ends panning gesture (+2pt)
 - [ ] User can view profile - basic modal transition (+1pt)
 
 The following **stretch** user stories are implemented:
